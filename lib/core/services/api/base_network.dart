@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:minersy_blum/core/config/constants/api_urls.dart';
-import 'package:minersy_blum/core/services/network/network_service.dart';
+import 'package:get/route_manager.dart';
+import 'package:test_project/core/config/constants/api_urls.dart';
+import 'package:test_project/core/services/network/network_service.dart';
 
 class BaseNetwork {
   factory BaseNetwork() {
