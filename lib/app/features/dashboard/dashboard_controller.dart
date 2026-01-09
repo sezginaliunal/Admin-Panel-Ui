@@ -1,35 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_project/core/widgets/stat_card_model.dart';
+import 'package:test_project/app/features/dashboard/core/widgets/stat_card_model.dart';
 
-/// Dashboard controller
-///
-/// Dashboard sayfasının state yönetimini sağlar
 class DashboardController extends GetxController {
-  final RxList<StatCardModel> _stats = <StatCardModel>[].obs;
-  final RxBool _isLoading = true.obs;
-
-  /// İstatistiklere erişim
-  List<StatCardModel> get stats => _stats;
-
-  /// Yükleme durumu
-  RxBool get isLoading => _isLoading.value.obs;
+  final RxList<StatCardModel> stats = <StatCardModel>[].obs;
+  final RxBool isLoading = true.obs;
 
   @override
   void onInit() {
     super.onInit();
-    _loadStats();
+    loadStats();
   }
 
-  /// İstatistikleri yükler
-  Future<void> _loadStats() async {
+  Future<void> loadStats() async {
     try {
-      _isLoading.value = true;
+      isLoading.value = true;
 
-      // Simüle edilmiş API çağrısı
       await Future.delayed(const Duration(milliseconds: 500));
 
-      _stats.value = [
+      stats.assignAll([
         StatCardModel(
           id: '1',
           title: 'Toplam Kullanıcı',
@@ -41,7 +30,7 @@ class DashboardController extends GetxController {
         ),
         StatCardModel(
           id: '2',
-          title: 'Aktif Oturumlar',
+          title: 'Satış Sayısı',
           value: '1,234',
           icon: Icons.online_prediction_outlined,
           accentColor: const Color(0xFF10B981),
@@ -83,7 +72,7 @@ class DashboardController extends GetxController {
           trend: 5.8,
           trendLabel: 'artış',
         ),
-      ];
+      ]);
     } catch (e) {
       Get.snackbar(
         'Hata',
@@ -91,30 +80,15 @@ class DashboardController extends GetxController {
         snackPosition: SnackPosition.BOTTOM,
       );
     } finally {
-      _isLoading.value = false;
+      isLoading.value = false;
     }
   }
 
-  /// İstatistikleri yeniler
-  Future<void> refreshStats() async {
-    await _loadStats();
-  }
-
-  /// Belirli bir istatistiği günceller
-  void updateStat(String id, StatCardModel updatedModel) {
-    final index = _stats.indexWhere((stat) => stat.id == id);
-    if (index != -1) {
-      _stats[index] = updatedModel;
-    }
-  }
-
-  /// İstatistik kartına tıklandığında çağrılır
   void onStatCardTap(StatCardModel model) {
     Get.snackbar(
       model.title,
       'Detaylı görünüm: ${model.value}',
       snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 2),
     );
   }
 }
