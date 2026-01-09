@@ -1,0 +1,88 @@
+name: test_project
+description: A Flutter project using GetX, Hive, and Dio
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+# =========================================================
+# Dependencies
+# =========================================================
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI
+  cupertino_icons: any
+  intl: ^0.20.2
+
+  # State Management
+  get: ^4.7.3
+  # Local Database
+  hive: any
+  hive_flutter: any
+
+  # Network
+  dio: ^5.9.0
+  connectivity_plus: any
+
+  # Serialization / JSON
+  json_annotation: any
+  url_launcher: ^6.3.2
+  clara: ^0.0.1
+
+
+# =========================================================
+# Dev Dependencies
+# =========================================================
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: any
+  very_good_analysis: any
+
+  # Code Generation
+  build_runner: any
+  hive_generator: any
+  json_serializable: any
+
+  # Testing
+  test: ^1.25.15
+
+# =========================================================
+# Flutter Configuration
+# =========================================================
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/translations/
+  fonts:
+    - family: SFProDisplay
+      fonts:
+        - asset: assets/fonts/SFPRODISPLAYULTRALIGHTITALIC.OTF
+          weight: 100
+          style: italic
+        - asset: assets/fonts/SFPRODISPLAYTHINITALIC.OTF
+          weight: 200
+          style: italic
+        - asset: assets/fonts/SFPRODISPLAYLIGHTITALIC.OTF
+          weight: 300
+          style: italic
+        - asset: assets/fonts/SFPRODISPLAYREGULAR.OTF
+          weight: 400
+        - asset: assets/fonts/SFPRODISPLAYMEDIUM.OTF
+          weight: 500
+        - asset: assets/fonts/SFPRODISPLAYSEMIBOLDITALIC.OTF
+          weight: 600
+          style: italic
+        - asset: assets/fonts/SFPRODISPLAYBOLD.OTF
+          weight: 700
+        - asset: assets/fonts/SFPRODISPLAYHEAVYITALIC.OTF
+          weight: 800
+          style: italic
+        - asset: assets/fonts/SFPRODISPLAYBLACKITALIC.OTF
+          weight: 900
+          style: italic

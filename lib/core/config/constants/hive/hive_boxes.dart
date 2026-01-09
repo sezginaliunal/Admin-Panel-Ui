@@ -1,0 +1,1 @@
+enum HiveBoxConstants { theme }
