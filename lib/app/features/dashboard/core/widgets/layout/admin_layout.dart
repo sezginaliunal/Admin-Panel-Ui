@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_project/app/features/dashboard/core/widgets/layout/responsive.dart';
 import 'package:test_project/app/features/dashboard/core/widgets/sidebar.dart';
 
-/// Admin panel düzeni
-///
-/// Sidebar ve içerik alanını responsive olarak yönetir
+/// Admin panel ana layout
 class AdminLayout extends StatelessWidget {
   final Widget child;
 
@@ -13,40 +11,42 @@ class AdminLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMobile = Responsive.isMobile(context);
+    final isTablet = Responsive.isTablet(context);
+
+    final useDrawer = isMobile || isTablet;
 
     return Scaffold(
-      appBar: isMobile ? _buildAppBar(context) : null,
-      drawer: _buildDrawer(context),
-      body: _buildBody(context),
+      appBar: useDrawer ? _buildAppBar(context) : null,
+      drawer: useDrawer ? const Drawer(child: Sidebar()) : null,
+      body: Row(
+        children: [
+          if (!useDrawer) const _DesktopSidebar(),
+          const SizedBox(width: 1), // divider hissi
+          _ContentArea(child: child),
+        ],
+      ),
     );
   }
 
-  /// AppBar oluşturur
+  /// Mobil & Tablet AppBar
   PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return AppBar();
-  }
-
-  /// Mobil görünümde drawer oluşturur
-  Widget? _buildDrawer(BuildContext context) {
-    return Responsive.isMobile(context) ? const Drawer(child: Sidebar()) : null;
-  }
-
-  /// Ana içerik alanını oluşturur
-  Widget _buildBody(BuildContext context) {
-    return Row(
-      children: [
-        if (!Responsive.isMobile(context)) const _DesktopSidebar(),
-        _ContentArea(child: child),
-      ],
+    return AppBar(
+      elevation: 0,
+      title: const Text('Admin Panel'),
+      leading: Builder(
+        builder: (context) => IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () => Scaffold.of(context).openDrawer(),
+        ),
+      ),
     );
   }
 }
 
-/// Masaüstü görünümünde sidebar
 class _DesktopSidebar extends StatelessWidget {
   const _DesktopSidebar();
 
-  static const double width = 260.0;
+  static const double width = 260;
 
   @override
   Widget build(BuildContext context) {
@@ -54,13 +54,12 @@ class _DesktopSidebar extends StatelessWidget {
   }
 }
 
-/// İçerik alanı wrapper'ı
 class _ContentArea extends StatelessWidget {
   final Widget child;
 
   const _ContentArea({required this.child});
 
-  static const double padding = 16.0;
+  static const double padding = 16;
 
   @override
   Widget build(BuildContext context) {

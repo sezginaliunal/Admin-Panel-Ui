@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:test_project/app/features/dashboard/core/utils/responsive_grid.dart';
 import 'package:test_project/app/features/dashboard/core/widgets/stat_card.dart';
 import '../dashboard_controller.dart';
 
@@ -19,31 +18,37 @@ class DashboardGrid extends StatelessWidget {
         );
       }
 
-      return SliverLayoutBuilder(
-        builder: (context, constraints) {
-          final gridConfig = ResponsiveGrid.calculate(
-            constraints.crossAxisExtent,
-          );
+      return SliverToBoxAdapter(
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final maxWidth = constraints.maxWidth;
+            final spacing = 16.0;
+            final cardWidth = 250.0; // Kart genişliği
+            final columns = (maxWidth / (cardWidth + spacing)).floor();
 
-          return SliverPadding(
-            padding: const EdgeInsets.all(16),
-            sliver: SliverGrid(
-              delegate: SliverChildBuilderDelegate((context, index) {
-                final stat = controller.stats[index];
-                return StatCard(
-                  model: stat,
-                  onTap: () => controller.onStatCardTap(stat),
+            final effectiveWidth =
+                (maxWidth - (columns - 1) * spacing) / columns;
+
+            return Wrap(
+              spacing: spacing,
+              runSpacing: spacing,
+              children: controller.stats.map((stat) {
+                return SizedBox(
+                  width: effectiveWidth,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                      minHeight: 120, // Minimum yükseklik
+                    ),
+                    child: StatCard(
+                      model: stat,
+                      onTap: () => controller.onStatCardTap(stat),
+                    ),
+                  ),
                 );
-              }, childCount: controller.stats.length),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: gridConfig.columns,
-                crossAxisSpacing: gridConfig.spacing,
-                mainAxisSpacing: gridConfig.spacing,
-                childAspectRatio: gridConfig.aspectRatio,
-              ),
-            ),
-          );
-        },
+              }).toList(),
+            );
+          },
+        ),
       );
     });
   }

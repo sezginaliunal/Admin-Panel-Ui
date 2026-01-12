@@ -1,114 +1,116 @@
 import 'package:flutter/material.dart';
 
-/// Dark Mode için renk paleti - Minimal Siyah/Beyaz Tema
+/// Dark Mode için renk paleti
+/// Pastel tonları ile yumuşak, modern ve göz yormayan admin panel teması
 class DarkColors {
-  // === PRIMARY COLORS === (Beyaz/Açık Gri)
-  static const primary = Color(0xFFFAFAFA);
-  static const onPrimary = Color(0xFF09090B);
-  static const primaryContainer = Color(0xFF27272A);
-  static const onPrimaryContainer = Color(0xFFFAFAFA);
+  // === PRIMARY COLORS === (Pastel Light Blue-Grey)
+  static const primary = Color(0xFFD1D5DB); // Warm Grey
+  static const onPrimary = Color(0xFF000000);
+  static const primaryContainer = Color(0xFF374151); // Warm Dark Grey
+  static const onPrimaryContainer = Color(0xFFE5E7EB);
 
-  // === SECONDARY COLORS === (Orta Gri)
-  static const secondary = Color(0xFFA1A1AA);
-  static const onSecondary = Color(0xFF18181B);
-  static const secondaryContainer = Color(0xFF3F3F46);
-  static const onSecondaryContainer = Color(0xFFE4E4E7);
+  // === SECONDARY COLORS === (Pastel Purple-Grey)
+  static const secondary = Color(0xFFB8B5C8); // Soft Lavender-Grey
+  static const onSecondary = Color(0xFF1F1F23);
+  static const secondaryContainer = Color(0xFF2D2D35);
+  static const onSecondaryContainer = Color(0xFFE8E6F0);
 
-  // === TERTIARY COLORS === (Hafif Accent - İnce Mavi)
-  static const tertiary = Color(0xFF60A5FA);
-  static const onTertiary = Color(0xFF09090B);
-  static const tertiaryContainer = Color(0xFF1E3A8A);
+  // === TERTIARY COLORS === (Pastel Blue)
+  static const tertiary = Color(0xFF93C5FD); // Soft Blue
+  static const onTertiary = Color(0xFF000000);
+  static const tertiaryContainer = Color(0xFF1E3A5F);
   static const onTertiaryContainer = Color(0xFFDBEAFE);
 
   // === BACKGROUND & SURFACE ===
-  static const background = Color(0xFF09090B);
-  static const onBackground = Color(0xFFFAFAFA);
-  static const surface = Color(0xFF09090B);
-  static const onSurface = Color(0xFFFAFAFA);
-  static const surfaceVariant = Color(0xFF18181B);
-  static const onSurfaceVariant = Color(0xFFD4D4D8);
+  static const background = Color(0xFF1C1B22); // Yumuşak koyu mor-gri pastel
+  static const onBackground = Color(0xFFE5E7EB);
+  static const surface = Color(0xFF252134); // Pastel mor-gri (card için uyumlu)
+  static const onSurface = Color(0xFFE5E7EB);
+  static const surfaceVariant = Color(0xFF2F2B3E); // Daha açık mor-gri
+  static const onSurfaceVariant = Color(0xFFD1D5DB);
 
-  // === ERROR COLORS ===
-  static const error = Color(0xFFFAFAFA);
-  static const onError = Color(0xFF09090B);
-  static const errorContainer = Color(0xFF27272A);
-  static const onErrorContainer = Color(0xFFFAFAFA);
+  // === ERROR COLORS === (Pastel Red/Pink)
+  static const error = Color(0xFFFCA5A5); // Soft Pink-Red
+  static const onError = Color(0xFF000000);
+  static const errorContainer = Color(0xFF4C1D1D);
+  static const onErrorContainer = Color(0xFFFEE2E2);
 
-  // === SUCCESS COLORS ===
-  static const success = Color(0xFFFAFAFA);
-  static const onSuccess = Color(0xFF09090B);
-  static const successContainer = Color(0xFF27272A);
-  static const onSuccessContainer = Color(0xFFFAFAFA);
+  // === SUCCESS COLORS === (Pastel Green)
+  static const success = Color(0xFF86EFAC); // Soft Mint Green
+  static const onSuccess = Color(0xFF000000);
+  static const successContainer = Color(0xFF1A3A26);
+  static const onSuccessContainer = Color(0xFFDCFCE7);
 
-  // === WARNING COLORS ===
-  static const warning = Color(0xFFD4D4D8);
-  static const onWarning = Color(0xFF09090B);
-  static const warningContainer = Color(0xFF3F3F46);
-  static const onWarningContainer = Color(0xFFFAFAFA);
+  // === WARNING COLORS === (Pastel Amber/Peach)
+  static const warning = Color(0xFFFCD34D); // Soft Yellow
+  static const onWarning = Color(0xFF000000);
+  static const warningContainer = Color(0xFF4A3010);
+  static const onWarningContainer = Color(0xFFFEF3C7);
 
-  // === INFO COLORS ===
-  static const info = Color(0xFFA1A1AA);
-  static const onInfo = Color(0xFF09090B);
-  static const infoContainer = Color(0xFF27272A);
-  static const onInfoContainer = Color(0xFFFAFAFA);
+  // === INFO COLORS === (Pastel Cyan)
+  static const info = Color(0xFF7DD3FC); // Soft Sky Blue
+  static const onInfo = Color(0xFF000000);
+  static const infoContainer = Color(0xFF164E63);
+  static const onInfoContainer = Color(0xFFE0F2FE);
 
   // === OUTLINE & BORDERS ===
-  static const outline = Color(0xFF27272A);
-  static const outlineVariant = Color(0xFF18181B);
-  static const shadow = Color(0xFF000000);
-  static const scrim = Color(0xFF000000);
+  static const outline = Color(0xFF3D3850);
+  static const outlineVariant = Color(0xFF4A4560);
+  static const shadow = Color(0x4D000000);
+  static const scrim = Color(0x99000000);
 
-  // === COMPONENT SPECIFIC COLORS ===
-  // AppBar
-  static const appBarBackground = Color(0xFF09090B);
-  static const appBarForeground = Color(0xFFFAFAFA);
+  // === APP BAR ===
+  static const appBarBackground = Color(0xFF252134);
+  static const appBarForeground = Color(0xFFE5E7EB);
 
-  // Bottom Navigation Bar
-  static const bottomNavBackground = Color(0xFF09090B);
-  static const bottomNavSelected = Color(0xFFFAFAFA);
-  static const bottomNavUnselected = Color(0xFF71717A);
+  // === BOTTOM NAVIGATION ===
+  static const bottomNavBackground = Color(0xFF252134);
+  static const bottomNavSelected = Color(0xFFD1D5DB);
+  static const bottomNavUnselected = Color(0xFF6B7280);
 
-  // Cards
-  static const cardBackground = Color(0xFF18181B);
+  // === CARDS ===
+  static const cardBackground = Color(
+    0xFF252134,
+  ); // Surface ile aynı, uyumlu pastel
   static const cardShadow = Color(0x33000000);
-  static const cardBorder = Color(0xFF27272A);
+  static const cardBorder = Color(0xFF3D3850);
 
-  // Buttons
-  static const buttonPrimary = Color(0xFFFAFAFA);
-  static const buttonSecondary = Color(0xFF27272A);
-  static const buttonDisabled = Color(0xFF18181B);
+  // === BUTTONS ===
+  static const buttonPrimary = Color(0xFFD1D5DB);
+  static const buttonSecondary = Color(0xFF2D2D35);
+  static const buttonDisabled = Color(0xFF1F1F28);
   static const onButtonDisabled = Color(0xFF52525B);
 
-  // Text Fields
-  static const textFieldBackground = Color(0xFF18181B);
-  static const textFieldBorder = Color(0xFF27272A);
-  static const textFieldBorderFocused = Color(0xFFFAFAFA);
-  static const textFieldBorderError = Color(0xFF71717A);
-  static const textFieldHint = Color(0xFF71717A);
-  static const textFieldText = Color(0xFFFAFAFA);
-  static const textFieldLabel = Color(0xFFA1A1AA);
+  // === TEXT FIELDS ===
+  static const textFieldBackground = Color(0xFF2F2B3E);
+  static const textFieldBorder = Color(0xFF3D3850);
+  static const textFieldBorderFocused = Color(0xFF93C5FD);
+  static const textFieldBorderError = Color(0xFFFCA5A5);
+  static const textFieldHint = Color(0xFF6B7280);
+  static const textFieldText = Color(0xFFE5E7EB);
+  static const textFieldLabel = Color(0xFFB8B5C8);
 
-  // Dividers
-  static const divider = Color(0xFF27272A);
+  // === DIVIDERS ===
+  static const divider = Color(0xFF2D2D35);
   static const dividerThick = Color(0xFF3F3F46);
 
-  // Chips & Tags
-  static const chipBackground = Color(0xFF27272A);
-  static const chipForeground = Color(0xFFFAFAFA);
+  // === CHIPS & TAGS ===
+  static const chipBackground = Color(0xFF2D2D35);
+  static const chipForeground = Color(0xFFD1D5DB);
   static const chipBorder = Color(0xFF3F3F46);
 
-  // Icons
-  static const iconPrimary = Color(0xFFFAFAFA);
-  static const iconSecondary = Color(0xFFA1A1AA);
+  // === ICONS ===
+  static const iconPrimary = Color(0xFFD1D5DB);
+  static const iconSecondary = Color(0xFFB8B5C8);
   static const iconDisabled = Color(0xFF52525B);
 
-  // Overlay & Backdrop
+  // === OVERLAY & BACKDROP ===
   static const overlay = Color(0x33000000);
-  static const backdrop = Color(0xE6000000);
+  static const backdrop = Color(0xBF000000);
 
-  // Status colors
-  static const disabled = Color(0xFF18181B);
-  static const inactive = Color(0xFF27272A);
+  // === STATUS ===
+  static const disabled = Color(0xFF1F1F28);
+  static const inactive = Color(0xFF3F3F46);
 
-  DarkColors._(); // Private constructor to prevent instantiation
+  DarkColors._();
 }

@@ -7,9 +7,9 @@ class DashboardController extends GetxController {
   final RxBool isLoading = true.obs;
 
   @override
-  void onInit() {
-    super.onInit();
+  void onReady() {
     loadStats();
+    super.onReady();
   }
 
   Future<void> loadStats() async {

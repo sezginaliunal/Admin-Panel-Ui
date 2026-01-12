@@ -47,7 +47,7 @@ class SidebarItem extends StatelessWidget {
       title,
       style: context.textStyles.bodyLarge?.copyWith(
         fontWeight: FontWeight.w400,
-        color: textColor ?? Colors.grey.shade800,
+        color: textColor,
       ),
     );
   }
