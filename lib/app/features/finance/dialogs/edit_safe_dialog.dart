@@ -1,33 +1,44 @@
-// lib/app/features/finance/dialogs/add_safe_dialog.dart
+// lib/app/features/finance/dialogs/edit_safe_dialog.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
-import 'package:test_project/app/finance/models/safe_model.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/models/safe_model.dart';
 
-class AddSafeDialog extends StatefulWidget {
-  const AddSafeDialog({super.key});
+class EditSafeDialog extends StatefulWidget {
+  final SafeModel safe;
+
+  const EditSafeDialog({super.key, required this.safe});
 
   @override
-  State<AddSafeDialog> createState() => _AddSafeDialogState();
+  State<EditSafeDialog> createState() => _EditSafeDialogState();
 }
 
-class _AddSafeDialogState extends State<AddSafeDialog> {
+class _EditSafeDialogState extends State<EditSafeDialog> {
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
-  final _descriptionController = TextEditingController();
-  final _balanceController = TextEditingController(text: '0');
+  late TextEditingController _nameController;
+  late TextEditingController _descriptionController;
 
-  String _selectedCurrency = 'TRY';
-  bool _isActive = true;
+  late String _selectedCurrency;
+  late bool _isActive;
 
   final List<String> _currencies = ['TRY', 'USD', 'EUR', 'GBP'];
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController = TextEditingController(text: widget.safe.name);
+    _descriptionController = TextEditingController(
+      text: widget.safe.description ?? '',
+    );
+    _selectedCurrency = widget.safe.currency;
+    _isActive = widget.safe.isActive;
+  }
 
   @override
   void dispose() {
     _nameController.dispose();
     _descriptionController.dispose();
-    _balanceController.dispose();
     super.dispose();
   }
 
@@ -55,14 +66,14 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Icon(
-                        Icons.account_balance_wallet,
+                        Icons.edit,
                         color: AppColors.primary(context),
                       ),
                     ),
                     const SizedBox(width: 16),
                     Expanded(
                       child: Text(
-                        'Yeni Kasa Ekle',
+                        'Kasa Düzenle',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -77,12 +88,44 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
 
                 const SizedBox(height: 24),
 
+                // Info Box
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: AppColors.info(context).withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: AppColors.info(context).withOpacity(0.3),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.info_outline,
+                        size: 20,
+                        color: AppColors.info(context),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Text(
+                          'Mevcut bakiye: ${Get.find<FinanceController>().formatCurrency(widget.safe.balance, widget.safe.currency)}',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: AppColors.info(context),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 16),
+
                 // Name Field
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
                     labelText: 'Kasa Adı *',
-                    hintText: 'Örn: Ana Kasa',
                     prefixIcon: const Icon(Icons.label),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -98,15 +141,16 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
 
                 const SizedBox(height: 16),
 
-                // Currency Field
+                // Currency Field (Disabled)
                 DropdownButtonFormField<String>(
                   initialValue: _selectedCurrency,
                   decoration: InputDecoration(
-                    labelText: 'Para Birimi *',
+                    labelText: 'Para Birimi',
                     prefixIcon: const Icon(Icons.monetization_on),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
+                    enabled: false,
                   ),
                   items: _currencies.map((currency) {
                     return DropdownMenuItem(
@@ -114,37 +158,7 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
                       child: Text(_getCurrencyDisplay(currency)),
                     );
                   }).toList(),
-                  onChanged: (value) {
-                    if (value != null) {
-                      setState(() => _selectedCurrency = value);
-                    }
-                  },
-                ),
-
-                const SizedBox(height: 16),
-
-                // Balance Field
-                TextFormField(
-                  controller: _balanceController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    labelText: 'Başlangıç Bakiyesi',
-                    hintText: '0.00',
-                    prefixIcon: const Icon(Icons.account_balance),
-                    suffixText: _getCurrencySymbol(_selectedCurrency),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Bakiye gerekli';
-                    }
-                    if (double.tryParse(value) == null) {
-                      return 'Geçerli bir sayı girin';
-                    }
-                    return null;
-                  },
+                  onChanged: null,
                 ),
 
                 const SizedBox(height: 16),
@@ -171,7 +185,7 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
                   onChanged: (value) => setState(() => _isActive = value),
                   title: const Text('Aktif'),
                   subtitle: Text(
-                    _isActive ? 'Kasa aktif olacak' : 'Kasa pasif olacak',
+                    _isActive ? 'Kasa aktif' : 'Kasa pasif',
                     style: TextStyle(
                       fontSize: 12,
                       color: AppColors.onSurfaceVariant(context),
@@ -207,7 +221,7 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: const Text('Kaydet'),
+                        child: const Text('Güncelle'),
                       ),
                     ),
                   ],
@@ -224,20 +238,16 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
     if (_formKey.currentState!.validate()) {
       final controller = Get.find<FinanceController>();
 
-      final safe = SafeModel(
-        id: DateTime.now().millisecondsSinceEpoch,
+      final updatedSafe = widget.safe.copyWith(
         name: _nameController.text.trim(),
-        currency: _selectedCurrency,
-        balance: double.parse(_balanceController.text),
         description: _descriptionController.text.trim().isEmpty
             ? null
             : _descriptionController.text.trim(),
         isActive: _isActive,
-        createdAt: DateTime.now(),
         updatedAt: DateTime.now(),
       );
 
-      controller.createSafe(safe);
+      controller.updateSafe(updatedSafe);
     }
   }
 
@@ -251,21 +261,6 @@ class _AddSafeDialogState extends State<AddSafeDialog> {
         return '€ Euro';
       case 'GBP':
         return '£ İngiliz Sterlini';
-      default:
-        return currency;
-    }
-  }
-
-  String _getCurrencySymbol(String currency) {
-    switch (currency) {
-      case 'TRY':
-        return '₺';
-      case 'USD':
-        return '\$';
-      case 'EUR':
-        return '€';
-      case 'GBP':
-        return '£';
       default:
         return currency;
     }

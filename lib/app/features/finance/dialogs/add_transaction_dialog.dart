@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
-import 'package:test_project/app/finance/models/transaction_model.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/models/transaction_model.dart';
 
 class AddTransactionDialog extends StatefulWidget {
   final bool isIncome;

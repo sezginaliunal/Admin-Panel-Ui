@@ -9,8 +9,8 @@ import 'package:test_project/app/features/settings/settings_binding.dart';
 import 'package:test_project/app/features/settings/settings_view.dart';
 import 'package:test_project/app/features/users/users_binding.dart';
 import 'package:test_project/app/features/users/users_view.dart';
-import 'package:test_project/app/finance/finance_binding.dart';
-import 'package:test_project/app/finance/finance_view.dart';
+import 'package:test_project/app/features/finance/finance_binding.dart';
+import 'package:test_project/app/features/finance/finance_view.dart';
 
 class AppRouter {
   // Singleton instance

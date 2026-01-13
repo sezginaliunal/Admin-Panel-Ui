@@ -5,8 +5,6 @@ class PackageModel {
   final double price;
   final String duration;
   final List<String> features;
-  final bool isPopular;
-  final String color;
 
   PackageModel({
     required this.id,
@@ -15,7 +13,5 @@ class PackageModel {
     required this.price,
     required this.duration,
     required this.features,
-    this.isPopular = false,
-    required this.color,
   });
 }

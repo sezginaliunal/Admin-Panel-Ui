@@ -11,6 +11,9 @@ class PackagesView extends GetView<PackagesController> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final gridConfig = PackageGridConfig.calculate(width);
+
     return AdminLayout(
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {},
@@ -22,51 +25,18 @@ class PackagesView extends GetView<PackagesController> {
           return const Center(child: CircularProgressIndicator());
         }
 
-        return LayoutBuilder(
-          builder: (context, constraints) {
-            final gridConfig = PackageGridConfig.calculate(
-              constraints.maxWidth,
-            );
-
-            return CustomScrollView(
-              slivers: [
-                /// HEADER
-                SliverToBoxAdapter(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Lisans Paketleri',
-                        style: Theme.of(context).textTheme.headlineLarge,
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'İhtiyacınıza en uygun paketi seçin',
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      const SizedBox(height: 24),
-                    ],
-                  ),
-                ),
-
-                /// STAGGERED GRID - MASONRY LAYOUT
-                SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: 24),
-                  sliver: SliverMasonryGrid.count(
-                    crossAxisCount: gridConfig.columns,
-                    mainAxisSpacing: gridConfig.spacing,
-                    crossAxisSpacing: gridConfig.spacing,
-                    childCount: controller.packages.length,
-                    itemBuilder: (context, index) {
-                      return PackageCard(package: controller.packages[index]);
-                    },
-                  ),
-                ),
-
-                const SliverToBoxAdapter(child: SizedBox(height: 24)),
-              ],
-            );
-          },
+        return CustomScrollView(
+          slivers: [
+            SliverMasonryGrid.count(
+              crossAxisCount: gridConfig.columns,
+              mainAxisSpacing: gridConfig.spacing,
+              crossAxisSpacing: gridConfig.spacing,
+              childCount: controller.packages.length,
+              itemBuilder: (context, index) {
+                return PackageCard(package: controller.packages[index]);
+              },
+            ),
+          ],
         );
       }),
     );

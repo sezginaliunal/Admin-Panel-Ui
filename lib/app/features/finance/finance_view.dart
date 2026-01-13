@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
 import 'package:test_project/app/features/dashboard/core/widgets/layout/admin_layout.dart';
-import 'package:test_project/app/finance/dialogs/add_safe_dialog.dart';
-import 'package:test_project/app/finance/dialogs/add_transaction_dialog.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
-import 'package:test_project/app/finance/widgets/finance_header.dart';
-import 'package:test_project/app/finance/widgets/safes_section.dart';
-import 'package:test_project/app/finance/widgets/transactions_section.dart';
+import 'package:test_project/app/features/finance/dialogs/add_safe_dialog.dart';
+import 'package:test_project/app/features/finance/dialogs/add_transaction_dialog.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/widgets/finance_header.dart';
+import 'package:test_project/app/features/finance/widgets/safes_section.dart';
+import 'package:test_project/app/features/finance/widgets/transactions_section.dart';
 
 class FinanceView extends GetView<FinanceController> {
   const FinanceView({super.key});

@@ -1,6 +1,6 @@
 // lib/app/features/finance/finance_binding.dart
 import 'package:get/get.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
 
 class FinanceBinding extends Bindings {
   @override

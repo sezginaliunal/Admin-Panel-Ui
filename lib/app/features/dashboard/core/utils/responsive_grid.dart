@@ -72,10 +72,22 @@ class PackageGridConfig {
   }
 
   static int _getColumnCount(double width) {
-    if (width < 600) return 1; // Mobile: 1 kolon
-    if (width < 900) return 2; // Tablet: 2 kolon
-    if (width < 1200) return 3; // Large Tablet: 3 kolon
-    return 4; // Desktop: 4 kolon
+    if (width < 600) {
+      // Mobile
+      return 1;
+    } else if (width < 900) {
+      // Tablet
+      return 2;
+    } else if (width < 1200) {
+      // Large Tablet / Small Desktop
+      return 2;
+    } else if (width < 1600) {
+      // Desktop
+      return 3;
+    } else {
+      // Wide Desktop
+      return 5;
+    }
   }
 
   static double _getSpacing(double width) {

@@ -53,7 +53,7 @@ class AdminLayout extends StatelessWidget {
 
 class _DesktopSidebar extends StatelessWidget {
   const _DesktopSidebar();
-  static const double width = 260;
+  static const double width = 200;
 
   @override
   Widget build(BuildContext context) {

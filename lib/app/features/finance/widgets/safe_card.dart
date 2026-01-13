@@ -2,9 +2,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
-import 'package:test_project/app/finance/dialogs/edit_safe_dialog.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
-import 'package:test_project/app/finance/models/safe_model.dart';
+import 'package:test_project/app/features/finance/dialogs/edit_safe_dialog.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/models/safe_model.dart';
 
 class SafeCard extends StatelessWidget {
   final SafeModel safe;

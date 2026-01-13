@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
 import 'package:test_project/app/features/dashboard/core/widgets/layout/responsive.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
 
 class FinanceHeader extends GetView<FinanceController> {
   const FinanceHeader({super.key});

@@ -28,7 +28,6 @@ class PackagesController extends GetxController {
           'Email Desteği',
           'Temel Raporlar',
         ],
-        color: '#E3F2FD',
       ),
       PackageModel(
         id: '2',
@@ -41,10 +40,7 @@ class PackagesController extends GetxController {
           '100 GB Depolama',
           'Öncelikli Destek',
           'Gelişmiş Raporlar',
-          'API Erişimi',
         ],
-        isPopular: true,
-        color: '#E8F5E9',
       ),
       PackageModel(
         id: '3',
@@ -57,10 +53,7 @@ class PackagesController extends GetxController {
           '1 TB Depolama',
           '7/24 Destek',
           'Özel Raporlar',
-          'Tam API Erişimi',
-          'Özel Entegrasyon',
         ],
-        color: '#FFF3E0',
       ),
     ];
 

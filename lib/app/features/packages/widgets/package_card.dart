@@ -1,3 +1,5 @@
+import 'package:clara/extensions/context_extension.dart';
+import 'package:clara/my_package.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/app/core/helper/color_hex.dart';
 import 'package:test_project/app/features/packages/models/package_model.dart';
@@ -10,193 +12,87 @@ class PackageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: AppColors.cardBackground(context),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: package.isPopular
-              ? AppColors.primary(context).withOpacity(0.4)
-              : AppColors.cardBorder(context),
-          width: package.isPopular ? 2 : 1,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: AppColors.cardShadow(context),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
+    return Card(
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            /// BAŞLIK & ETİKET
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  width: 10,
-                  height: 10,
-                  margin: const EdgeInsets.only(top: 6),
-                  decoration: BoxDecoration(
-                    color: hexToColor(package.color),
-                    shape: BoxShape.circle,
-                    boxShadow: [
-                      BoxShadow(
-                        color: hexToColor(package.color).withOpacity(0.4),
-                        blurRadius: 8,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(width: 14),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         package.name,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.onSurface(context),
-                          height: 1.2,
+                        style: context.textStyles.titleLarge?.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      if (package.isPopular) ...[
-                        const SizedBox(height: 8),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 5,
-                          ),
-                          decoration: BoxDecoration(
-                            color: AppColors.primary(context).withOpacity(0.15),
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(
-                              color: AppColors.primary(
-                                context,
-                              ).withOpacity(0.3),
-                              width: 1,
-                            ),
-                          ),
-                          child: Text(
-                            'Popüler Seçim',
-                            style: TextStyle(
-                              color: AppColors.primary(context),
-                              fontSize: 11,
-                              fontWeight: FontWeight.w600,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                        ),
-                      ],
                     ],
                   ),
                 ),
               ],
             ),
 
-            const SizedBox(height: 16),
-
             /// AÇIKLAMA
-            Text(
-              package.description,
-              style: TextStyle(
-                fontSize: 14,
-                color: AppColors.onSurfaceVariant(context),
-                height: 1.5,
-              ),
-            ),
-
-            const SizedBox(height: 24),
+            Text(package.description, style: context.textStyles.titleSmall),
 
             /// FİYAT
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.baseline,
-              textBaseline: TextBaseline.alphabetic,
+            Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              runAlignment: WrapAlignment.center,
               children: [
                 Text(
-                  '₺${package.price.toStringAsFixed(0)}',
-                  style: TextStyle(
-                    fontSize: 32,
+                  '${package.price.toCurrencyString(locale: 'tr_TR', symbol: '₺')}',
+                  style: context.textStyles.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: AppColors.primary(context),
                   ),
                 ),
-                const SizedBox(width: 8),
                 Text(
                   '/ ${package.duration}',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: AppColors.onSurfaceVariant(context),
-                  ),
+                  style: context.textStyles.labelLarge,
                 ),
               ],
             ),
 
-            const SizedBox(height: 24),
-
             /// ÖZELLİKLER
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: AppColors.surfaceVariant(context).withOpacity(0.5),
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: AppColors.outline(context).withOpacity(0.5),
-                  width: 1,
-                ),
-              ),
+            Card(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Paket İçeriği',
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.onSurface(context).withOpacity(0.8),
-                      letterSpacing: 0.3,
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(
+                      'Paket İçeriği',
+                      style: context.textStyles.labelLarge,
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  const Divider(height: 1),
                   ...package.features.map(
-                    (feature) => Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Icon(
-                            Icons.check_circle_rounded,
-                            size: 18,
-                            color: AppColors.success(context),
-                          ),
-                          const SizedBox(width: 10),
-                          Expanded(
-                            child: Text(
-                              feature,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: AppColors.onSurfaceVariant(context),
-                                height: 1.4,
-                              ),
-                            ),
-                          ),
-                        ],
+                    (feature) => ListTile(
+                      dense: true,
+                      contentPadding: EdgeInsets.zero,
+                      leading: Icon(
+                        Icons.check_circle_rounded,
+                        color: AppColors.success(context),
                       ),
+                      title: Text(feature),
                     ),
                   ),
                 ],
-              ),
+              ).paddingNormal(),
             ),
+            ElevatedButton.icon(
+              onPressed: () {},
+              label: Text('Düzenle'),
+              icon: Icon(Icons.edit),
+            ).center,
           ],
         ),
-      ),
+      ).paddingNormal(),
     );
   }
 }

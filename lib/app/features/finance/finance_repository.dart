@@ -1,7 +1,7 @@
 // lib/app/features/finance/repositories/finance_repository.dart
 
-import 'package:test_project/app/finance/models/safe_model.dart';
-import 'package:test_project/app/finance/models/transaction_model.dart';
+import 'package:test_project/app/features/finance/models/safe_model.dart';
+import 'package:test_project/app/features/finance/models/transaction_model.dart';
 
 class FinanceRepository {
   // Mock Data - API çağrıları buraya gelecek

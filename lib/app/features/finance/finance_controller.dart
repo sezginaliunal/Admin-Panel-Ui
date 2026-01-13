@@ -1,8 +1,8 @@
 // lib/app/features/finance/finance_controller.dart
 import 'package:get/get.dart';
-import 'package:test_project/app/finance/finance_repository.dart';
-import 'package:test_project/app/finance/models/safe_model.dart';
-import 'package:test_project/app/finance/models/transaction_model.dart';
+import 'package:test_project/app/features/finance/finance_repository.dart';
+import 'package:test_project/app/features/finance/models/safe_model.dart';
+import 'package:test_project/app/features/finance/models/transaction_model.dart';
 
 class FinanceController extends GetxController {
   final FinanceRepository _repository = FinanceRepository();

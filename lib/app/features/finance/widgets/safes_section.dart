@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
-import 'package:test_project/app/finance/finance_controller.dart';
-import 'package:test_project/app/finance/widgets/safe_card.dart';
+import 'package:test_project/app/features/finance/finance_controller.dart';
+import 'package:test_project/app/features/finance/widgets/safe_card.dart';
 
 // lib/app/features/finance/widgets/safes_section.dart
 class SafesSection extends GetView<FinanceController> {
