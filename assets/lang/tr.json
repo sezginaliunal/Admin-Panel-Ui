@@ -1,0 +1,292 @@
+{
+  "init": {
+    "error": "Hata",
+    "loading": "Yükleniyor",
+    "success": "Başarılı",
+    "network_error": "Ağ bağlantısı hatası",
+    "retry": "Tekrar Dene",
+    "cancel": "İptal",
+    "ok": "Tamam",
+    "yes": "Evet",
+    "no": "Hayır"
+  },
+
+  "app": {
+    "title": "Uygulama",
+    "version": "Sürüm",
+    "logout": "Çıkış Yap",
+    "language": "Dil",
+    "theme": "Tema",
+    "dark_mode": "Koyu Mod",
+    "light_mode": "Açık Mod",
+    "settings": "Ayarlar",
+    "about": "Hakkında",
+    "privacy_policy": "Gizlilik Politikası",
+    "terms": "Kullanım Şartları"
+  },
+
+  "auth": {
+    "login": "Giriş Yap",
+    "logout": "Çıkış Yap",
+    "register": "Kayıt Ol",
+    "signup": "Kayıt Ol",
+    "signin": "Giriş Yap",
+    "forgot_password": "Şifremi Unuttum",
+    "reset_password": "Şifre Sıfırla",
+    "new_password": "Yeni Şifre",
+    "confirm_password": "Şifreyi Onayla",
+    "old_password": "Eski Şifre",
+    "change_password": "Şifre Değiştir",
+    "email": "E-posta",
+    "username": "Kullanıcı Adı",
+    "password": "Şifre",
+    "remember_me": "Beni Hatırla",
+    "dont_have_account": "Hesabın yok mu?",
+    "already_have_account": "Zaten hesabın var mı?",
+    "verification_code": "Doğrulama Kodu",
+    "send_code": "Kod Gönder",
+    "verify": "Doğrula",
+    "login_success": "Giriş başarılı",
+    "register_success": "Kayıt başarılı"
+  },
+
+  "home": {
+    "home": "Anasayfa",
+    "dashboard": "Panel",
+    "welcome": "Hoş Geldiniz",
+    "search": "Ara",
+    "search_placeholder": "Bir şeyler ara...",
+    "notifications": "Bildirimler",
+    "view_all": "Tümünü Gör",
+    "recent_activity": "Son Aktiviteler",
+    "see_more": "Daha Fazla"
+  },
+
+  "profile": {
+    "profile": "Profil",
+    "edit_profile": "Profili Düzenle",
+    "update_profile": "Profili Güncelle",
+    "first_name": "Ad",
+    "last_name": "Soyad",
+    "full_name": "Ad Soyad",
+    "phone": "Telefon",
+    "address": "Adres",
+    "city": "Şehir",
+    "country": "Ülke",
+    "save_changes": "Değişiklikleri Kaydet",
+    "upload_photo": "Fotoğraf Yükle",
+    "remove_photo": "Fotoğrafı Kaldır"
+  },
+
+  "forms": {
+    "submit": "Gönder",
+    "save": "Kaydet",
+    "update": "Güncelle",
+    "delete": "Sil",
+    "add": "Ekle",
+    "edit": "Düzenle",
+    "clear": "Temizle",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "confirm": "Onayla",
+    "close": "Kapat",
+    "open": "Aç",
+    "select": "Seç",
+    "choose_file": "Dosya Seç",
+    "no_data": "Veri Yok",
+    "required_field": "Zorunlu Alan"
+  },
+
+  "validation": {
+    "invalid_email": "Geçersiz e-posta",
+    "password_mismatch": "Şifreler uyuşmuyor",
+    "password_short": "Şifre çok kısa",
+    "field_required": "Bu alan zorunlu",
+    "min_length": "Minimum uzunluk sağlanmadı",
+    "max_length": "Maksimum uzunluk aşıldı",
+    "invalid_format": "Geçersiz format",
+    "something_went_wrong": "Bir şeyler ters gitti",
+    "email_required": "E-posta zorunlu",
+    "password_required": "Şifre zorunlu",
+    "password_min_length": "Şifre çok kısa",
+    "invalid_number": "Geçersiz numara",
+    "phone_required": "Telefon zorunlu",
+    "invalid_phone": "Geçersiz telefon",
+    "invalid_url": "Geçersiz URL"
+  },
+
+  "items": {
+    "items": "Öğeler",
+    "add_item": "Öğe Ekle",
+    "edit_item": "Öğe Düzenle",
+    "delete_item": "Öğe Sil",
+    "item_list": "Öğe Listesi",
+    "item_details": "Öğe Detayı",
+    "empty_list": "Liste Boş"
+  },
+
+  "cart": {
+    "cart": "Sepet",
+    "add_to_cart": "Sepete Ekle",
+    "remove_from_cart": "Sepetten Çıkar",
+    "checkout": "Ödeme",
+    "total": "Toplam",
+    "quantity": "Adet",
+    "price": "Fiyat",
+    "subtotal": "Ara Toplam",
+    "shipping": "Kargo",
+    "order_summary": "Sipariş Özeti",
+    "payment": "Ödeme",
+    "order_success": "Sipariş Başarılı",
+    "order_failed": "Sipariş Başarısız"
+  },
+
+  "chat": {
+    "chat": "Sohbet",
+    "messages": "Mesajlar",
+    "new_message": "Yeni Mesaj",
+    "send": "Gönder",
+    "type_message": "Mesaj yaz...",
+    "no_messages": "Mesaj yok",
+    "online": "Çevrimiçi",
+    "offline": "Çevrimdışı",
+    "last_seen": "Son Görülme"
+  },
+
+  "errors": {
+    "error": "Hata",
+    "not_found": "Bulunamadı",
+    "unauthorized": "Yetkisiz",
+    "forbidden": "Erişim Engellendi",
+    "internal_server_error": "Sunucu Hatası",
+    "timeout": "Zaman Aşımı",
+    "no_internet": "İnternet Yok",
+    "try_again": "Tekrar Dene"
+  },
+
+  "notifications": {
+    "new_notification": "Yeni Bildirim",
+    "mark_as_read": "Okundu Olarak İşaretle",
+    "mark_all_as_read": "Tümünü Okundu Yap",
+    "no_notifications": "Bildirim Yok"
+  },
+
+  "dates": {
+    "today": "Bugün",
+    "yesterday": "Dün",
+    "tomorrow": "Yarın",
+    "this_week": "Bu Hafta",
+    "last_week": "Geçen Hafta",
+    "this_month": "Bu Ay",
+    "last_month": "Geçen Ay",
+    "date": "Tarih",
+    "time": "Saat"
+  },
+
+  "alerts": {
+    "confirm_delete": "Silmek istediğinize emin misiniz?",
+    "action_success": "İşlem başarılı",
+    "action_failed": "İşlem başarısız",
+    "logout_confirm": "Çıkış yapmak istiyor musunuz?",
+    "unsaved_changes": "Kaydedilmemiş değişiklikler var"
+  },
+
+  "permissions": {
+    "camera_permission": "Kamera izni",
+    "gallery_permission": "Galeri izni",
+    "location_permission": "Konum izni",
+    "microphone_permission": "Mikrofon izni"
+  },
+
+  "onboarding": {
+    "skip": "Geç",
+    "next": "İleri",
+    "done": "Bitti",
+    "get_started": "Başla",
+    "welcome_title": "Hoş Geldiniz",
+    "welcome_description": "Uygulamaya hoş geldiniz"
+  },
+
+  "settings": "Ayarlar",
+  "not_set": "Ayarlanmadı",
+  "save": "Kaydet",
+
+  "appearance_settings": "Görünüm Ayarları",
+  "dark_mode_desc": "Koyu tema kullan",
+  "language": "Dil",
+  "select_language": "Dil Seç",
+
+  "sms_settings": "SMS Ayarları",
+  "sms_enabled": "SMS Aktif",
+  "sms_enabled_desc": "SMS bildirimlerini etkinleştir",
+  "sms_api_key": "SMS API Anahtarı",
+  "sms_provider": "SMS Sağlayıcı",
+  "sms_sender_name": "Gönderici Adı",
+  "sms_configuration": "SMS Yapılandırması",
+  "select_sms_provider": "SMS Sağlayıcı Seç",
+  "sender_name": "Gönderici Adı",
+
+  "email_settings": "E-posta Ayarları",
+  "email_enabled": "E-posta Aktif",
+  "email_enabled_desc": "E-posta bildirimlerini etkinleştir",
+  "smtp_host": "SMTP Sunucu",
+  "smtp_port": "SMTP Port",
+  "email_username": "E-posta Kullanıcı Adı",
+  "email_password": "E-posta Şifresi",
+  "email_configuration": "E-posta Yapılandırması",
+
+  "notification_settings": "Bildirim Ayarları",
+  "push_notifications": "Push Bildirimleri",
+  "push_notifications_desc": "Anlık bildirimleri etkinleştir",
+  "firebase_app_id": "Firebase App ID",
+  "firebase_api_key": "Firebase API Key",
+  "push_configuration": "Push Yapılandırması",
+
+  "account_settings": "Hesap Ayarları",
+  "change_password": "Şifre Değiştir",
+  "change_password_desc": "Hesap şifreni değiştir",
+  "privacy": "Gizlilik",
+  "privacy_desc": "Gizlilik ayarları",
+
+  "other_settings": "Diğer Ayarlar",
+  "about": "Hakkında",
+  "about_desc": "Uygulama hakkında bilgiler",
+  "help_support": "Yardım & Destek",
+  "help_support_desc": "Destek alın",
+  "logout": "Çıkış Yap",
+
+  "packages": {
+    "new": "Yeni Paket",
+    "edit": "Paketi Düzenle",
+    "content": "Paket İçeriği",
+    "duration": "Süre"
+  },
+
+  "finance": {
+    "title": "Finans",
+    "subtitle": "Genel finans durumu",
+    "total_balance": "Toplam Bakiye",
+    "total_income": "Toplam Gelir",
+    "total_expense": "Toplam Gider",
+    "net_profit": "Net Kar / Zarar"
+  },
+
+  "safes": {
+    "title": "Kasalar",
+    "active_count": "Aktif Kasa Sayısı",
+    "empty": "Kasa bulunamadı"
+  },
+
+  "transactions": {
+    "title": "İşlemler",
+    "all_safes": "Tüm Kasalar",
+    "show_all": "Tümünü Göster",
+    "empty": "İşlem bulunamadı"
+  },
+
+  "common": {
+    "success": "Başarılı",
+    "error": "Hata"
+  }
+}

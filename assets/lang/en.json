@@ -1,0 +1,292 @@
+{
+  "init": {
+    "error": "Error",
+    "loading": "Loading",
+    "success": "Success",
+    "network_error": "Network error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "yes": "Yes",
+    "no": "No"
+  },
+
+  "app": {
+    "title": "App",
+    "version": "Version",
+    "logout": "Logout",
+    "language": "Language",
+    "theme": "Theme",
+    "dark_mode": "Dark Mode",
+    "light_mode": "Light Mode",
+    "settings": "Settings",
+    "about": "About",
+    "privacy_policy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "signup": "Sign Up",
+    "signin": "Sign In",
+    "forgot_password": "Forgot Password",
+    "reset_password": "Reset Password",
+    "new_password": "New Password",
+    "confirm_password": "Confirm Password",
+    "old_password": "Old Password",
+    "change_password": "Change Password",
+    "email": "Email",
+    "username": "Username",
+    "password": "Password",
+    "remember_me": "Remember Me",
+    "dont_have_account": "Don't have an account?",
+    "already_have_account": "Already have an account?",
+    "verification_code": "Verification Code",
+    "send_code": "Send Code",
+    "verify": "Verify",
+    "login_success": "Login successful",
+    "register_success": "Registration successful"
+  },
+
+  "home": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "welcome": "Welcome",
+    "search": "Search",
+    "search_placeholder": "Search something...",
+    "notifications": "Notifications",
+    "view_all": "View All",
+    "recent_activity": "Recent Activity",
+    "see_more": "See More"
+  },
+
+  "profile": {
+    "profile": "Profile",
+    "edit_profile": "Edit Profile",
+    "update_profile": "Update Profile",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "full_name": "Full Name",
+    "phone": "Phone",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "save_changes": "Save Changes",
+    "upload_photo": "Upload Photo",
+    "remove_photo": "Remove Photo"
+  },
+
+  "forms": {
+    "submit": "Submit",
+    "save": "Save",
+    "update": "Update",
+    "delete": "Delete",
+    "add": "Add",
+    "edit": "Edit",
+    "clear": "Clear",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "confirm": "Confirm",
+    "close": "Close",
+    "open": "Open",
+    "select": "Select",
+    "choose_file": "Choose File",
+    "no_data": "No Data",
+    "required_field": "Required Field"
+  },
+
+  "validation": {
+    "invalid_email": "Invalid email",
+    "password_mismatch": "Passwords do not match",
+    "password_short": "Password too short",
+    "field_required": "This field is required",
+    "min_length": "Minimum length not met",
+    "max_length": "Maximum length exceeded",
+    "invalid_format": "Invalid format",
+    "something_went_wrong": "Something went wrong",
+    "email_required": "Email is required",
+    "password_required": "Password is required",
+    "password_min_length": "Password too short",
+    "invalid_number": "Invalid number",
+    "phone_required": "Phone is required",
+    "invalid_phone": "Invalid phone",
+    "invalid_url": "Invalid URL"
+  },
+
+  "items": {
+    "items": "Items",
+    "add_item": "Add Item",
+    "edit_item": "Edit Item",
+    "delete_item": "Delete Item",
+    "item_list": "Item List",
+    "item_details": "Item Details",
+    "empty_list": "Empty List"
+  },
+
+  "cart": {
+    "cart": "Cart",
+    "add_to_cart": "Add to Cart",
+    "remove_from_cart": "Remove from Cart",
+    "checkout": "Checkout",
+    "total": "Total",
+    "quantity": "Quantity",
+    "price": "Price",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "order_summary": "Order Summary",
+    "payment": "Payment",
+    "order_success": "Order Successful",
+    "order_failed": "Order Failed"
+  },
+
+  "chat": {
+    "chat": "Chat",
+    "messages": "Messages",
+    "new_message": "New Message",
+    "send": "Send",
+    "type_message": "Type a message...",
+    "no_messages": "No messages",
+    "online": "Online",
+    "offline": "Offline",
+    "last_seen": "Last Seen"
+  },
+
+  "errors": {
+    "error": "Error",
+    "not_found": "Not Found",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden",
+    "internal_server_error": "Internal Server Error",
+    "timeout": "Timeout",
+    "no_internet": "No Internet",
+    "try_again": "Try Again"
+  },
+
+  "notifications": {
+    "new_notification": "New Notification",
+    "mark_as_read": "Mark as Read",
+    "mark_all_as_read": "Mark All as Read",
+    "no_notifications": "No Notifications"
+  },
+
+  "dates": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "this_week": "This Week",
+    "last_week": "Last Week",
+    "this_month": "This Month",
+    "last_month": "Last Month",
+    "date": "Date",
+    "time": "Time"
+  },
+
+  "alerts": {
+    "confirm_delete": "Are you sure you want to delete?",
+    "action_success": "Action successful",
+    "action_failed": "Action failed",
+    "logout_confirm": "Do you want to logout?",
+    "unsaved_changes": "You have unsaved changes"
+  },
+
+  "permissions": {
+    "camera_permission": "Camera Permission",
+    "gallery_permission": "Gallery Permission",
+    "location_permission": "Location Permission",
+    "microphone_permission": "Microphone Permission"
+  },
+
+  "onboarding": {
+    "skip": "Skip",
+    "next": "Next",
+    "done": "Done",
+    "get_started": "Get Started",
+    "welcome_title": "Welcome",
+    "welcome_description": "Welcome to the app"
+  },
+
+  "settings": "Settings",
+  "not_set": "Not Set",
+  "save": "Save",
+
+  "appearance_settings": "Appearance Settings",
+  "dark_mode_desc": "Use dark theme",
+  "language": "Language",
+  "select_language": "Select Language",
+
+  "sms_settings": "SMS Settings",
+  "sms_enabled": "SMS Enabled",
+  "sms_enabled_desc": "Enable SMS notifications",
+  "sms_api_key": "SMS API Key",
+  "sms_provider": "SMS Provider",
+  "sms_sender_name": "Sender Name",
+  "sms_configuration": "SMS Configuration",
+  "select_sms_provider": "Select SMS Provider",
+  "sender_name": "Sender Name",
+
+  "email_settings": "Email Settings",
+  "email_enabled": "Email Enabled",
+  "email_enabled_desc": "Enable email notifications",
+  "smtp_host": "SMTP Host",
+  "smtp_port": "SMTP Port",
+  "email_username": "Email Username",
+  "email_password": "Email Password",
+  "email_configuration": "Email Configuration",
+
+  "notification_settings": "Notification Settings",
+  "push_notifications": "Push Notifications",
+  "push_notifications_desc": "Enable instant notifications",
+  "firebase_app_id": "Firebase App ID",
+  "firebase_api_key": "Firebase API Key",
+  "push_configuration": "Push Configuration",
+
+  "account_settings": "Account Settings",
+  "change_password": "Change Password",
+  "change_password_desc": "Change your account password",
+  "privacy": "Privacy",
+  "privacy_desc": "Privacy settings",
+
+  "other_settings": "Other Settings",
+  "about": "About",
+  "about_desc": "Information about the app",
+  "help_support": "Help & Support",
+  "help_support_desc": "Get support",
+  "logout": "Logout",
+
+  "packages": {
+    "new": "New Package",
+    "edit": "Edit Package",
+    "content": "Package Content",
+    "duration": "Duration"
+  },
+
+  "finance": {
+    "title": "Finance",
+    "subtitle": "General financial overview",
+    "total_balance": "Total Balance",
+    "total_income": "Total Income",
+    "total_expense": "Total Expense",
+    "net_profit": "Net Profit / Loss"
+  },
+
+  "safes": {
+    "title": "Safes",
+    "active_count": "Active Safe Count",
+    "empty": "No safes found"
+  },
+
+  "transactions": {
+    "title": "Transactions",
+    "all_safes": "All Safes",
+    "show_all": "Show All",
+    "empty": "No transactions found"
+  },
+
+  "common": {
+    "success": "Success",
+    "error": "Error"
+  }
+}

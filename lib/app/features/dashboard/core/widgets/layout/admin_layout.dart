@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_project/app/features/dashboard/core/widgets/layout/responsive.dart';
-import 'package:test_project/app/features/dashboard/core/widgets/sidebar.dart';
+import 'package:test_project/app/features/dashboard/sidebar/sidebar.dart';
 
 /// Admin panel ana layout
 class AdminLayout extends StatelessWidget {
@@ -40,7 +40,6 @@ class AdminLayout extends StatelessWidget {
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return AppBar(
       elevation: 0,
-      title: const Text('Admin Panel'),
       leading: Builder(
         builder: (context) => IconButton(
           icon: const Icon(Icons.menu),

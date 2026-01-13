@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:test_project/app/features/dashboard/core/widgets/stat_card.dart';
+import 'package:test_project/app/features/dashboard/widgets/stat_card.dart';
 import '../dashboard_controller.dart';
 
 class DashboardGrid extends StatelessWidget {
@@ -22,8 +22,8 @@ class DashboardGrid extends StatelessWidget {
         child: LayoutBuilder(
           builder: (context, constraints) {
             final maxWidth = constraints.maxWidth;
-            final spacing = 16.0;
-            final cardWidth = 250.0; // Kart genişliği
+            final spacing = -10.0;
+            final cardWidth = 250.0;
             final columns = (maxWidth / (cardWidth + spacing)).floor();
 
             final effectiveWidth =

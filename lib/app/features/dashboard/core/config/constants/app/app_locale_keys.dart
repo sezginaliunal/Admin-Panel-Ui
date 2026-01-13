@@ -193,4 +193,84 @@ abstract class AppLocaleKeys {
   static const onboardGetStarted = 'onboarding.get_started';
   static const onboardWelcomeTitle = 'onboarding.welcome_title';
   static const onboardWelcomeDesc = 'onboarding.welcome_description';
+  // Genel
+  static const String settings = 'settings';
+  static const String notSet = 'not_set';
+  static const String save = 'save';
+
+  // Görünüm Ayarları
+  static const String appearanceSettings = 'appearance_settings';
+  static const String darkModeDesc = 'dark_mode_desc';
+  static const String language = 'language';
+  static const String selectLanguage = 'select_language';
+
+  // SMS Ayarları
+  static const String smsSettings = 'sms_settings';
+  static const String smsEnabled = 'sms_enabled';
+  static const String smsEnabledDesc = 'sms_enabled_desc';
+  static const String smsApiKey = 'sms_api_key';
+  static const String smsProvider = 'sms_provider';
+  static const String smsSenderName = 'sms_sender_name';
+  static const String smsConfiguration = 'sms_configuration';
+  static const String selectSmsProvider = 'select_sms_provider';
+  static const String senderName = 'sender_name';
+
+  // Email Ayarları
+  static const String emailSettings = 'email_settings';
+  static const String emailEnabled = 'email_enabled';
+  static const String emailEnabledDesc = 'email_enabled_desc';
+  static const String smtpHost = 'smtp_host';
+  static const String smtpPort = 'smtp_port';
+  static const String emailUsername = 'email_username';
+  static const String emailPassword = 'email_password';
+  static const String emailConfiguration = 'email_configuration';
+
+  // Bildirim Ayarları
+  static const String notificationSettings = 'notification_settings';
+  static const String pushNotifications = 'push_notifications';
+  static const String pushNotificationsDesc = 'push_notifications_desc';
+  static const String firebaseAppId = 'firebase_app_id';
+  static const String firebaseApiKey = 'firebase_api_key';
+  static const String pushConfiguration = 'push_configuration';
+
+  // Hesap Ayarları
+  static const String accountSettings = 'account_settings';
+  static const String changePassword = 'change_password';
+  static const String changePasswordDesc = 'change_password_desc';
+  static const String privacy = 'privacy';
+  static const String privacyDesc = 'privacy_desc';
+
+  // Diğer Ayarlar
+  static const String otherSettings = 'other_settings';
+  static const String about = 'about';
+  static const String aboutDesc = 'about_desc';
+  static const String helpSupport = 'help_support';
+  static const String helpSupportDesc = 'help_support_desc';
+  static const String logout = 'logout';
+  // PACKAGES
+  static const packagesNew = 'packages.new';
+  static const packagesEdit = 'packages.edit';
+  static const packagesContent = 'packages.content';
+  static const packagesDuration = 'packages.duration';
+
+  // FINANCE
+  static const financeTitle = 'finance.title';
+  static const financeSubtitle = 'finance.subtitle';
+
+  static const financeTotalBalance = 'finance.total_balance';
+  static const financeTotalIncome = 'finance.total_income';
+  static const financeTotalExpense = 'finance.total_expense';
+  static const financeNetProfit = 'finance.net_profit';
+  // SAFES
+  static const safesTitle = 'safes.title';
+  static const safesActiveCount = 'safes.active_count';
+  static const safesEmpty = 'safes.empty';
+  // TRANSACTIONS
+  static const transactionsTitle = 'transactions.title';
+  static const transactionsAllSafes = 'transactions.all_safes';
+  static const transactionsShowAll = 'transactions.show_all';
+  static const transactionsEmpty = 'transactions.empty';
+  // COMMON
+  static const commonSuccess = 'common.success';
+  static const commonError = 'common.error';
 }

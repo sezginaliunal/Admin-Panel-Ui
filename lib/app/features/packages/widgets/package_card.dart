@@ -1,7 +1,7 @@
 import 'package:clara/extensions/context_extension.dart';
 import 'package:clara/my_package.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/app/core/helper/color_hex.dart';
+import 'package:test_project/core/helper/color_hex.dart';
 import 'package:test_project/app/features/packages/models/package_model.dart';
 import 'package:test_project/app/features/dashboard/core/config/constants/colors/app_colors.dart';
 
