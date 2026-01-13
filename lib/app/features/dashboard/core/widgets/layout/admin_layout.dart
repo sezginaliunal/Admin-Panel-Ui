@@ -5,23 +5,31 @@ import 'package:test_project/app/features/dashboard/core/widgets/sidebar.dart';
 /// Admin panel ana layout
 class AdminLayout extends StatelessWidget {
   final Widget child;
+  final Widget? floatingActionButton;
+  final FloatingActionButtonLocation? floatingActionButtonLocation;
 
-  const AdminLayout({super.key, required this.child});
+  const AdminLayout({
+    super.key,
+    required this.child,
+    this.floatingActionButton,
+    this.floatingActionButtonLocation,
+  });
 
   @override
   Widget build(BuildContext context) {
     final isMobile = Responsive.isMobile(context);
-    final isTablet = Responsive.isTablet(context);
-
-    final useDrawer = isMobile || isTablet;
+    final useDrawer = isMobile;
 
     return Scaffold(
       appBar: useDrawer ? _buildAppBar(context) : null,
       drawer: useDrawer ? const Drawer(child: Sidebar()) : null,
+      floatingActionButton: floatingActionButton,
+      floatingActionButtonLocation:
+          floatingActionButtonLocation ?? FloatingActionButtonLocation.endFloat,
       body: Row(
         children: [
           if (!useDrawer) const _DesktopSidebar(),
-          const SizedBox(width: 1), // divider hissi
+          const SizedBox(width: 1),
           _ContentArea(child: child),
         ],
       ),
@@ -45,7 +53,6 @@ class AdminLayout extends StatelessWidget {
 
 class _DesktopSidebar extends StatelessWidget {
   const _DesktopSidebar();
-
   static const double width = 260;
 
   @override
@@ -56,9 +63,7 @@ class _DesktopSidebar extends StatelessWidget {
 
 class _ContentArea extends StatelessWidget {
   final Widget child;
-
   const _ContentArea({required this.child});
-
   static const double padding = 16;
 
   @override

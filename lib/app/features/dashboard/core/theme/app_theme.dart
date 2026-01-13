@@ -414,7 +414,7 @@ class AppThemes {
 
     // === APP BAR ===
     appBarTheme: AppBarTheme(
-      backgroundColor: DarkColors.buttonPrimary,
+      backgroundColor: DarkColors.appBarBackground,
       foregroundColor: DarkColors.appBarForeground,
       elevation: 0,
       centerTitle: false,

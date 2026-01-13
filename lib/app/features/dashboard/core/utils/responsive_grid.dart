@@ -56,3 +56,31 @@ class ResponsiveGrid {
     return null; // Büyük ekranlarda aspectRatio kullan
   }
 }
+
+/// Paket sayfası için özelleştirilmiş grid yapılandırması
+class PackageGridConfig {
+  final int columns;
+  final double spacing;
+
+  const PackageGridConfig({required this.columns, required this.spacing});
+
+  static PackageGridConfig calculate(double width) {
+    return PackageGridConfig(
+      columns: _getColumnCount(width),
+      spacing: _getSpacing(width),
+    );
+  }
+
+  static int _getColumnCount(double width) {
+    if (width < 600) return 1; // Mobile: 1 kolon
+    if (width < 900) return 2; // Tablet: 2 kolon
+    if (width < 1200) return 3; // Large Tablet: 3 kolon
+    return 4; // Desktop: 4 kolon
+  }
+
+  static double _getSpacing(double width) {
+    if (width < 600) return 16.0; // Mobile: daha az boşluk
+    if (width < 900) return 20.0; // Tablet
+    return 20.0; // Desktop
+  }
+}

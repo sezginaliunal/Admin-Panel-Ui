@@ -3,10 +3,12 @@ enum RoutesName {
   unknown('/unknown'),
   onboarding('/onboarding'),
   home('/home'),
-  printer('/printer'),
+  users('/users'),
+  packages('/packages'),
   companySettings('/companySettings'),
   login('/login'),
   settings('/settings'),
+  finance('/finance'),
   profile('/profile');
 
   final String path;
